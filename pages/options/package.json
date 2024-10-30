@@ -1,0 +1,38 @@
+{
+  "name": "@extension/options",
+  "version": "0.3.3",
+  "description": "chrome extension - options",
+  "private": true,
+  "sideEffects": true,
+  "files": [
+    "dist/**"
+  ],
+  "scripts": {
+    "clean:node_modules": "bunx rimraf node_modules",
+    "clean:turbo": "rimraf .turbo",
+    "clean": "bun clean:turbo && bun clean:node_modules",
+    "build": "vue-tsc -b && vite build",
+    "dev": "cross-env __DEV__=true vite build --mode development",
+    "lint": "eslint . --ext .ts,.tsx",
+    "lint:fix": "bun lint --fix",
+    "prettier": "prettier . --write --ignore-path ../../.prettierignore",
+    "type-check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@extension/storage": "workspace:*",
+    "@extension/ui": "workspace:*"
+  },
+  "devDependencies": {
+    "@extension/tailwindcss-config": "workspace:*",
+    "@extension/tsconfig": "workspace:*",
+    "@extension/vite-config": "workspace:*",
+    "postcss-load-config": "^6.0.1",
+    "cross-env": "^7.0.3"
+  },
+  "postcss": {
+    "plugins": {
+      "tailwindcss": {},
+      "autoprefixer": {}
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "name": "chrome-extension",
+  "version": "0.0.1",
+  "description": "chrome extension - core settings",
+  "type": "module",
+  "scripts": {
+    "clean:node_modules": "bunx rimraf node_modules",
+    "clean:turbo": "rimraf .turbo",
+    "clean": "bun clean:turbo && bun clean:node_modules",
+    "build": "vite build",
+    "dev": "cross-env __DEV__=true vite build --mode development",
+    "test": "vitest run",
+    "lint": "eslint ./ --ext .ts,.js,.tsx,.jsx",
+    "lint:fix": "bun lint --fix",
+    "prettier": "prettier . --write --ignore-path ../.prettierignore",
+    "type-check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "webextension-polyfill": "^0.12.0",
+    "@extension/storage": "workspace:*"
+  },
+  "devDependencies": {
+    "@extension/dev-utils": "workspace:*",
+    "@extension/hmr": "workspace:*",
+    "@extension/tsconfig": "workspace:*",
+    "@extension/vite-config": "workspace:*",
+    "@laynezh/vite-plugin-lib-assets": "^0.5.23",
+    "@types/ws": "^8.5.12",
+    "magic-string": "^0.30.10",
+    "ts-loader": "^9.5.1",
+    "deepmerge": "^4.3.1",
+    "cross-env": "^7.0.3"
+  }
+}

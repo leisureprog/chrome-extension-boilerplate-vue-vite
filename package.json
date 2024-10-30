@@ -1,0 +1,60 @@
+{
+  "name": "@maga/chrome-extension-boilerplate-vue-vite",
+  "version": "0.3.3",
+  "description": "chrome extension boilerplate",
+  "engines": {
+    "node": ">=18.19.1"
+  },
+  "license": "MIT",
+  "packageManager": "bun@1.1.33",
+  "scripts": {
+    "clean:bundle": "rimraf dist && rimraf dist-zip && turbo clean:bundle",
+    "clean:node_modules": "turbo daemon stop && bunx rimraf node_modules && bunx turbo clean:node_modules",
+    "clean:turbo": "turbo daemon stop && rimraf .turbo && turbo clean:turbo",
+    "clean": "bun clean:bundle && bun clean:turbo && bun clean:node_modules",
+    "clean:install": "bun clean:node_modules && bun install --frozen-lockfile",
+    "build": "bun clean:bundle && turbo ready && turbo build",
+    "zip": "bun build && bun -F zipper zip",
+    "dev": "turbo ready && cross-env __DEV__=true turbo watch dev --concurrency 20",
+    "e2e": "bun build && bun zip && turbo e2e",
+    "type-check": "turbo type-check",
+    "lint": "turbo lint --continue -- --fix --cache --cache-location node_modules/.cache/.eslintcache",
+    "lint:fix": "turbo lint:fix --continue -- --fix --cache --cache-location node_modules/.cache/.eslintcache",
+    "prettier": "turbo prettier --continue -- --cache --cache-location node_modules/.cache/.prettiercache",
+    "prepare": "husky",
+    "update-version": "bash update_version.sh"
+  },
+  "type": "module",
+  "workspaces": [
+    "chrome-extension",
+    "pages/*",
+    "packages/*"
+  ],
+  "devDependencies": {
+    "@types/chrome": "^0.0.279",
+    "@types/node": "^22.8.4",
+    "@typescript-eslint/eslint-plugin": "^8.11.0",
+    "@typescript-eslint/parser": "^8.11.0",
+    "autoprefixer": "^10.4.20",
+    "cross-env": "^7.0.3",
+    "esbuild": "^0.23.0",
+    "eslint": "8.57.0",
+    "husky": "^9.1.4",
+    "lint-staged": "^15.2.7",
+    "postcss": "^8.4.47",
+    "prettier": "^3.3.3",
+    "rimraf": "^6.0.1",
+    "tailwindcss": "^3.4.11",
+    "tslib": "^2.6.3",
+    "turbo": "^2.0.12",
+    "typescript": "5.5.4",
+    "unplugin-auto-import": "^0.18.3",
+    "unplugin-vue-components": "^0.27.4",
+    "vite": "5.4.9",
+    "vue-tsc": "2.1.6"
+  },
+  "dependencies": {
+    "@vueuse/core": "^11.1.0",
+    "vue-router": "^4.4.5"
+  }
+}
