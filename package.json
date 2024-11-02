@@ -14,8 +14,8 @@
     "clean": "bun clean:bundle && bun clean:turbo && bun clean:node_modules",
     "clean:install": "bun clean:node_modules && bun install --frozen-lockfile",
     "build": "bun clean:bundle && turbo ready && turbo build",
-    "zip": "bun build && bun -F zipper zip",
-    "dev": "turbo ready && cross-env __DEV__=true turbo watch dev --concurrency 20",
+    "zip": "bun run build && bun zip.ts",
+    "dev": "bun --hot turbo ready && cross-env __DEV__=true turbo watch dev --concurrency 20",
     "e2e": "bun build && bun zip && turbo e2e",
     "type-check": "turbo type-check",
     "lint": "turbo lint --continue -- --fix --cache --cache-location node_modules/.cache/.eslintcache",
@@ -55,6 +55,7 @@
   },
   "dependencies": {
     "@vueuse/core": "^11.1.0",
-    "vue-router": "^4.4.5"
+    "vue-router": "^4.4.5",
+    "archiver": "^7.0.1"
   }
 }

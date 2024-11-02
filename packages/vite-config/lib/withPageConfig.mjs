@@ -62,7 +62,6 @@ export function withPageConfig(config) {
             ]
           }),
 
-
           isDev && watchRebuildPlugin({ refresh: true })
         ],
         build: {
@@ -75,9 +74,9 @@ export function withPageConfig(config) {
             external: ['chrome'],
           },
         },
-        // define: {
-        //   'process.env.NODE_ENV': isDev ? 'development' : 'production',
-        // },
+        define: {
+          // 'process.env.NODE_ENV': isDev ? 'development' : 'production',
+        },
         envDir: '../..'
       },
       config,
