@@ -39,11 +39,14 @@ export function withPageConfig(config) {
 
             // generate `auto-imports.d.ts` global declarations, 
             // also accepts a path for custom filename
-            dts: true
+            dts: 'src/auto-imports.d.ts'
           }),
 
           // https://github.com/antfu/unplugin-vue-components
           Components({
+            // Путь к директории, где будут искаться компоненты
+            dirs: ['src/**/components'],
+      
             // Расширения файлов, которые будут автоматически загружаться
             extensions: ['vue'],
 
@@ -51,7 +54,7 @@ export function withPageConfig(config) {
             include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
 
             // Генерация глобальных деклараций для компонентов
-            dts: true,
+            dts: 'src/components.d.ts',
 
             // Разрешить подпапки как префиксы пространств имен для компонентов
             directoryAsNamespace: true,
@@ -74,9 +77,9 @@ export function withPageConfig(config) {
             external: ['chrome'],
           },
         },
-        define: {
-          // 'process.env.NODE_ENV': isDev ? 'development' : 'production',
-        },
+        // define: {
+        //   'process.env.NODE_ENV': isDev ? 'development' : 'production',
+        // },
         envDir: '../..'
       },
       config,
