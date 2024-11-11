@@ -14,7 +14,7 @@
     "clean": "bun clean:bundle && bun clean:turbo && bun clean:node_modules",
     "clean:install": "bun clean:node_modules && bun install --frozen-lockfile",
     "build": "bun clean:bundle && turbo ready && turbo build",
-    "zip": "bun run build && bun zip.ts",
+    "zip": "bun run build && bun ./packages/archiver/index.ts",
     "dev": "bun turbo ready && cross-env __DEV__=true turbo watch dev --concurrency 20",
     "e2e": "bun build && bun zip && turbo e2e",
     "type-check": "turbo type-check",
