@@ -1,6 +1,6 @@
 {
   "name": "@maga/chrome-extension-boilerplate-vue-vite",
-  "version": "0.3.3",
+  "version": "0.0.1",
   "description": "chrome extension boilerplate",
   "engines": {
     "node": ">=18.19.1"
