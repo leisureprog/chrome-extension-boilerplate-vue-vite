@@ -1,7 +1,7 @@
-import fs from 'node:fs';
-import deepmerge from 'deepmerge';
+import fs from 'node:fs'
+import deepmerge from 'deepmerge'
 
-const packageJson = JSON.parse(fs.readFileSync('../package.json', 'utf8')); 
+const packageJson = JSON.parse(fs.readFileSync('../package.json', 'utf8')) 
 
 /**
  * After changing, please reload the extension at `chrome://extensions`
@@ -21,8 +21,7 @@ const manifest = deepmerge(
     permissions: ['storage', 'scripting', 'tabs', 'notifications'],
     options_page: 'options/index.html',
     background: {
-      service_worker: 'background.iife.js',
-      type: 'module',
+      service_worker: 'background.iife.js'
     },
     action: {
       default_popup: 'popup/index.html',
@@ -62,6 +61,6 @@ const manifest = deepmerge(
     },
     permissions: ['sidePanel'],
   }
-);
+)
 
-export default manifest;
+export default manifest
