@@ -6,6 +6,8 @@ import { isDev, isProduction } from './env.mjs'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 
+console.log(isDev)
+
 export const watchOption = isDev ? {
   buildDelay: 100,
   chokidar: {
@@ -77,9 +79,9 @@ export function withPageConfig(config) {
             external: ['chrome'],
           },
         },
-        // define: {
-        //   'process.env.NODE_ENV': isDev ? 'development' : 'production',
-        // },
+        define: {
+          'process.env.NODE_ENV': isDev ? `'development'` : `'production'`,
+        },
         envDir: '../..'
       },
       config,

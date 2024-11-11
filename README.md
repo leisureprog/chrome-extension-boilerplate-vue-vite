@@ -39,7 +39,6 @@
     - [Pages](#structure-pages)
 - [Getting started](#getting-started)
     - [Chrome](#getting-started-chrome)
-    - [Firefox](#getting-started-firefox)
 - [Install dependency](#install-dependency)
     - [For root](#install-dependency-for-root)
     - [For module](#install-dependency-for-module)
@@ -89,21 +88,6 @@ This boilerplate is made for creating chrome extensions using React and Typescri
 3. Check - `Developer mode`
 4. Find and Click - `Load unpacked extension`
 5. Select - `dist` folder at root
-
-### For Firefox: <a name="getting-started-firefox"></a>
-
-1. Run:
-    - Dev: `bun dev:firefox`
-    - Prod: `bun build:firefox`
-2. Open in browser - `about:debugging#/runtime/this-firefox`
-3. Find and Click - `Load Temporary Add-on...`
-4. Select - `manifest.json` from `dist` folder at root
-
-<h3>
-<i>Remember in firefox you add plugin in temporary mode, that's mean it'll disappear after each browser close.
-
-You have to do it on every browser launch.</i>
-</h3>
 
 ## Install dependency for turborepo: <a name="install-dependency"></a>
 

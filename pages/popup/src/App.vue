@@ -8,7 +8,6 @@ const counterStore = useCounterStore()
 
 <template>
   <div class="flex flex-col bg-white">
-    
     <div class="flex flex-col text-center mt-40 mx-auto">
       <span>{{ counterStore.count }}</span>
 

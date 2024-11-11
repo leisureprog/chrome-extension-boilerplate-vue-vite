@@ -52,18 +52,3 @@ export function makeEntryPointPlugin(): PluginOption {
     },
   }
 }
-
-/**
- * Extract content directory from output directory for Firefox
- * @param outputDir
- */
-function extractContentDir(outputDir: string) {
-  const parts = outputDir.split(path.sep)
-  const distIndex = parts.indexOf('dist')
-
-  if (distIndex !== -1 && distIndex < parts.length - 1) {
-    return parts.slice(distIndex + 1)
-  }
-
-  throw new Error('Output directory does not contain "dist"')
-}
