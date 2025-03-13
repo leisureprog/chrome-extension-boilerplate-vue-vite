@@ -2,13 +2,11 @@ import { defineConfig } from 'vite'
 import { watchRebuildPlugin } from '@extension/hmr'
 import Vue from '@vitejs/plugin-vue'
 import deepmerge from 'deepmerge'
-import { isDev, isProduction } from './env.mjs'
+import env, { IS_DEV, IS_PROD } from '@extension/env'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 
-console.log(isDev)
-
-export const watchOption = isDev ? {
+export const watchOption = IS_DEV ? {
   buildDelay: 100,
   chokidar: {
     ignored: [
@@ -26,6 +24,9 @@ export function withPageConfig(config) {
   return defineConfig(
     deepmerge(
       {
+        define: {
+          'process.env': env,
+        },
         base: '',
         plugins: [
           Vue(),
@@ -67,22 +68,19 @@ export function withPageConfig(config) {
             ]
           }),
 
-          isDev && watchRebuildPlugin({ refresh: true })
+          IS_DEV && watchRebuildPlugin({ refresh: true })
         ],
+        
         build: {
-          sourcemap: isDev,
-          minify: isProduction,
-          reportCompressedSize: isProduction,
-          emptyOutDir: isProduction,
+          sourcemap: IS_DEV,
+          minify: IS_PROD,
+          reportCompressedSize: IS_PROD,
+          emptyOutDir: IS_PROD,
           watch: watchOption,
           rollupOptions: {
             external: ['chrome'],
           },
         },
-        define: {
-          'process.env.NODE_ENV': isDev ? `'development'` : `'production'`,
-        },
-        envDir: '../..'
       },
       config,
     ),

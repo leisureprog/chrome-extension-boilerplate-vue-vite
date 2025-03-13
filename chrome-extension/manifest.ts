@@ -1,5 +1,5 @@
-import { readFileSync } from 'node:fs';
-const packageJson = JSON.parse(readFileSync('./package.json', 'utf8'));
+import { readFileSync } from 'node:fs'
+const packageJson = JSON.parse(readFileSync('./package.json', 'utf8'))
 /**
  * @prop default_locale
  * if you want to support multiple languages, you can use the following reference
@@ -18,13 +18,19 @@ const packageJson = JSON.parse(readFileSync('./package.json', 'utf8'));
 const manifest = {
     manifest_version: 3,
     name: '__MSG_extensionName__',
+    browser_specific_settings: {
+        gecko: {
+            id: 'example@example.com',
+            strict_min_version: '109.0',
+        },
+    },
     version: packageJson.version,
     description: '__MSG_extensionDescription__',
     host_permissions: ['<all_urls>'],
     permissions: ['storage', 'scripting', 'tabs', 'notifications', 'sidePanel'],
     options_page: 'options/index.html',
     background: {
-        service_worker: 'background.js'
+      service_worker: 'background.js'
     },
     action: {
         default_popup: 'popup/index.html',
@@ -59,5 +65,5 @@ const manifest = {
     side_panel: {
         default_path: 'side-panel/index.html',
     },
-};
-export default manifest;
+}
+export default manifest

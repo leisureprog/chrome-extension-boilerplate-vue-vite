@@ -1,2 +1,1 @@
-export * from './lib/env.mjs'
-export * from './lib/withPageConfig.mjs'
+export * from './lib/index.mjs'

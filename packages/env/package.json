@@ -1,7 +1,7 @@
 {
-  "name": "@extension/dev-utils",
+  "name": "@extension/env",
   "version": "0.4.2",
-  "description": "chrome extension - dev utils",
+  "description": "chrome extension - environment variables",
   "type": "module",
   "private": true,
   "sideEffects": false,
@@ -12,14 +12,17 @@
   "main": "dist/index.mjs",
   "scripts": {
     "clean:bundle": "rimraf dist",
-    "clean:node_modules": "bunx rimraf node_modules",
+    "clean:node_modules": "pnpx rimraf node_modules",
     "clean:turbo": "rimraf .turbo",
-    "clean": "bun run clean:bundle && bun run clean:node_modules && bun run clean:turbo",
+    "clean": "pnpm clean:bundle && pnpm clean:node_modules && pnpm clean:turbo",
     "ready": "tsc -b",
     "lint": "eslint .",
-    "lint:fix": "bun run lint --fix",
+    "lint:fix": "pnpm lint --fix",
     "prettier": "prettier . --write --ignore-path ../../.prettierignore",
     "type-check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@dotenvx/dotenvx": "^1.33.0"
   },
   "devDependencies": {
     "@extension/tsconfig": "workspace:*"
