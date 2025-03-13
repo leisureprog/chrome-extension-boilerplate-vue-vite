@@ -30,7 +30,7 @@ export default function makeManifestPlugin(config: { outDir: string }): PluginOp
     }
     const manifestPath = resolve(to, 'manifest.json')
 
-    fs.writeFileSync(manifestPath, ManifestParser.convertManifestToString(manifest, 'chrome'))
+    fs.writeFileSync(manifestPath, ManifestParser.convertManifestToString(manifest, false))
 
     colorLog(`Manifest file copy complete: ${manifestPath}`, 'success')
   }
