@@ -1,4 +1,13 @@
 import 'webextension-polyfill'
+import { startHighlander } from './highlander'
+import { startExtension } from './extension'
 
-console.log('Background loaded')
-console.log("Edit 'chrome-extension/src/background/index.ts' and save to reload.")
+console.log('background loaded')
+
+async function main() {
+  startHighlander()
+  
+  startExtension()
+}
+
+main()
