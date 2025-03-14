@@ -8,11 +8,12 @@ import Components from 'unplugin-vue-components/vite'
 
 export const watchOption = IS_DEV ? {
   buildDelay: 100,
+  exclude: [/\/pages\/content-ui\/dist\/.*\.(css)$/],
   chokidar: {
-    ignored: [
-      /\/packages\/.*\.(ts|vue|map)$/,
-    ]
-  }
+    ignored: [/\/packages\/.*\.(ts|vue|map)$/],
+    awaitWriteFinish: true,
+    ignored: [/\/packages\/.*\.(ts|vue|map)$/, /\/pages\/content-ui\/dist\/.*/],
+  },
 } : undefined
 
 /**

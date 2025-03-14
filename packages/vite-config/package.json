@@ -1,18 +1,25 @@
 {
   "name": "@extension/vite-config",
-  "version": "0.3.3",
+  "version": "0.4.2",
   "description": "chrome extension - vite base configuration",
-  "main": "index.mjs",
   "type": "module",
   "private": true,
+  "sideEffects": true,
+  "types": "index.mts",
+  "main": "dist/index.mjs",
+  "module": "dist/index.mjs",
   "scripts": {
     "clean:node_modules": "bunx rimraf node_modules",
-    "clean": "bun clean:node_modules"
+    "clean:bundle": "bunx rimraf dist",
+    "clean": "bunm clean:bundle && bunm clean:node_modules",
+    "ready": "tsc -b"
+  },
+  "dependencies": {
+    "@extension/env": "workspace:*"
   },
   "devDependencies": {
     "@extension/hmr": "workspace:*",
     "@extension/tsconfig": "workspace:*",
-    "@vitejs/plugin-vue": "^5.1.4",
-    "deepmerge": "^4.3.1"
+    "@vitejs/plugin-react-swc": "^3.7.2"
   }
 }
