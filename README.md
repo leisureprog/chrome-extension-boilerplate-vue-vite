@@ -10,15 +10,6 @@
 ![](https://img.shields.io/badge/Typescript-3178C6?style=flat-square&logo=typescript&logoColor=white)
 ![](https://badges.aleen42.com/src/vitejs.svg)
 
-![GitHub action badge](https://github.com/Jonghakseo/chrome-extension-boilerplate-react-vite/actions/workflows/build-zip.yml/badge.svg)
-![GitHub action badge](https://github.com/Jonghakseo/chrome-extension-boilerplate-react-vite/actions/workflows/lint.yml/badge.svg)
-
-<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://github.com/Jonghakseo/chrome-extension-boilerplate-react-viteFactions&count_bg=%23#222222&title_bg=%23#454545&title=😀&edge_flat=true" alt="hits"/>
-<a href="https://discord.gg/4ERQ6jgV9a" target="_blank"><img src="https://discord.com/api/guilds/1263404974830915637/widget.png"/></a>
-
-> This boilerplate
-> has [Legacy version](https://github.com/Jonghakseo/chrome-extension-boilerplate-react-vite/tree/legacy)
-
 </div>
 
 > [!NOTE]
@@ -54,15 +45,12 @@ This boilerplate is made for creating chrome extensions using React and Typescri
 
 ## Features <a name="features"></a>
 
-- [React18](https://reactjs.org/)
+- [Vue3](https://vuejs.org/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Tailwindcss](https://tailwindcss.com/)
 - [Vite](https://vitejs.dev/)
 - [Turborepo](https://turbo.build/repo)
-- [Prettier](https://prettier.io/)
-- [ESLint](https://eslint.org/)
 - [Chrome Extension Manifest Version 3](https://developer.chrome.com/docs/extensions/mv3/intro/)
-- [Custom I18n Package](/packages/i18n/)
 - [Custom HMR(Hot Module Rebuild) Plugin](/packages/hmr/)
 - [End to End Testing with WebdriverIO](https://webdriver.io/)
 
@@ -73,16 +61,15 @@ This boilerplate is made for creating chrome extensions using React and Typescri
    - `git config --global core.autocrlf input`
    #### This will change eol(End of line) to the same as on Linux/Mac, without this, you will have conflicts with your teammates with those systems and our bash script won't work
 2. Clone this repository.
-3. Change `extensionDescription` and `extensionName` in `messages.json` file in `packages/i18n/locales` folder.
-4. Install bun globally: `npm install -g bun` (check your node version >= 18.19.1))
-5. Run `bun install`
+3. Install bun globally: `npm install -g bun` (check your node version >= 18.19.1))
+4. Run `bun install`
 
 ### And then, depending on needs:
 
 ### For Chrome: <a name="getting-started-chrome"></a>
 
 1. Run:
-    - Dev: `bun dev` (On windows, you should run as administrator. [(Issue#456)](https://github.com/Jonghakseo/chrome-extension-boilerplate-react-vite/issues/456)
+    - Dev: `bun dev` (On windows, you should run as administrator. [(Issue#456)](https://github.com/0xMaga/chrome-extension-boilerplate-vue-vite/issues/456)
     - Prod: `bun build`
 2. Open in browser - `chrome://extensions`
 3. Check - `Developer mode`
@@ -134,7 +121,6 @@ Main app with background script, manifest
 Some shared packages
 
 - `dev-utils` - utils for chrome extension development (manifest-parser, logger)
-- `i18n` - custom i18n package for chrome extension. provide i18n function with type safety and other validation.
 - `hmr` - custom HMR plugin for vite, injection script for reload/refresh, hmr dev-server
 - `shared` - shared code for entire project. (types, constants, custom hooks, components, etc.)
 - `storage` - helpers for [storage](https://developer.chrome.com/docs/extensions/reference/api/storage) easier integration with, e.g local, session storages
@@ -166,13 +152,6 @@ Some shared packages
 - `side-panel` - [sidepanel(Chrome 114+)](https://developer.chrome.com/docs/extensions/reference/sidePanel/) for chrome
   extension (`side_panel.default_path` in manifest.json)
 
-## Community <a name="community"></a>
-
-To chat with other community members, you can join the [Discord](https://discord.gg/4ERQ6jgV9a) server.
-You can ask questions on that server, and you can also help others.
-
-Also, suggest new features or share any challenges you've faced while developing Chrome extensions!
-
 ## Reference <a name="reference"></a>
 
 - [Vite Plugin](https://vitejs.dev/guide/api-plugin.html)
@@ -181,31 +160,4 @@ Also, suggest new features or share any challenges you've faced while developing
 - [Turborepo](https://turbo.build/repo/docs)
 - [Rollup-plugin-chrome-extension](https://www.extend-chrome.dev/rollup-plugin)
 
-## Star History <a name="star-history"></a>
-
-<a href="https://star-history.com/#Jonghakseo/chrome-extension-boilerplate-react-vite&Date">
- <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=Jonghakseo/chrome-extension-boilerplate-react-vite&type=Date&theme=dark" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=Jonghakseo/chrome-extension-boilerplate-react-vite&type=Date" />
-   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=Jonghakseo/chrome-extension-boilerplate-react-vite&type=Date" />
- </picture>
-</a>
-
-## Contributors <a name="contributors"></a>
-
-This Boilerplate is made possible thanks to all of its contributors.
-
-<a href="https://github.com/Jonghakseo/chrome-extension-boilerplate-react-vite/graphs/contributors">
-  <img width="500px" src="https://contrib.rocks/image?repo=Jonghakseo/chrome-extension-boilerplate-react-vite" alt="All Contributors"/>
-</a>
-
 ---
-
-## Special Thanks To
-
-| <a href="https://jb.gg/OpenSourceSupport"><img width="40" src="https://resources.jetbrains.com/storage/products/company/brand/logos/jb_beam.png" alt="JetBrains Logo (Main) logo."></a> | <a href="https://www.linkedin.com/in/j-acks0n"><img width="40" style="border-radius:50%" src='https://avatars.githubusercontent.com/u/23139754' alt='Jackson Hong'/></a> |
-|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-
----
-
-Made by [Jonghakseo](https://jonghakseo.github.io/)
