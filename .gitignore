@@ -14,7 +14,6 @@ eslint.config.js
 tsconfig.tsbuildinfo
 
 # env
-**/.env.*
 **/.env
 
 # etc
