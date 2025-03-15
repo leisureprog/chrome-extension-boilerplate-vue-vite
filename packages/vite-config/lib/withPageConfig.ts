@@ -1,3 +1,4 @@
+import type { UserConfig } from 'vite'
 import { defineConfig } from 'vite'
 import { watchRebuildPlugin } from '@extension/hmr'
 import Vue from '@vitejs/plugin-vue'
@@ -10,7 +11,6 @@ export const watchOption = IS_DEV ? {
   buildDelay: 100,
   exclude: [/\/pages\/content-ui\/dist\/.*\.(css)$/],
   chokidar: {
-    ignored: [/\/packages\/.*\.(ts|vue|map)$/],
     awaitWriteFinish: true,
     ignored: [/\/packages\/.*\.(ts|vue|map)$/, /\/pages\/content-ui\/dist\/.*/],
   },
@@ -21,7 +21,7 @@ export const watchOption = IS_DEV ? {
  * @param {UserConfig} config
  * @returns {UserConfig}
  */
-export function withPageConfig(config) {
+export function withPageConfig(config: UserConfig) {
   return defineConfig(
     deepmerge(
       {

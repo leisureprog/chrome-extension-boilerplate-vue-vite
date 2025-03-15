@@ -1,7 +1,5 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-// eslint-disable-next-line
-// @ts-ignore
 import injectedStyle from './index.css?inline'
 
 export function mount() {

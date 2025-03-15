@@ -19,7 +19,7 @@ export default withPageConfig({
       name: 'contentUI',
       fileName: 'index',
       formats: ['iife'],
-      entry: resolve(srcDir, 'index.tsx'),
+      entry: resolve(srcDir, 'index.ts'),
     },
     outDir: resolve(rootDir, '..', '..', 'dist', 'content-ui'),
   },

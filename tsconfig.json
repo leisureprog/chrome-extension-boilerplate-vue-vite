@@ -6,5 +6,6 @@
     "noImplicitAny": false,
     "noEmit": false,
     "target": "ESNext"
-  }
+  },
+  "include": ["eslint.config.ts"]
 }

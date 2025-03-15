@@ -1,5 +1,5 @@
-import sucrase from '@rollup/plugin-sucrase';
-import type { Plugin, RollupOptions } from 'rollup';
+import sucrase from '@rollup/plugin-sucrase'
+import type { Plugin, RollupOptions } from 'rollup'
 
 const plugins = [
   // @ts-expect-error I don't know why error happening here
@@ -7,7 +7,7 @@ const plugins = [
     exclude: ['node_modules/**'],
     transforms: ['typescript'],
   }),
-] satisfies Plugin[];
+] satisfies Plugin[]
 
 export default [
   {
@@ -26,4 +26,4 @@ export default [
       file: 'dist/lib/injections/refresh.js',
     },
   },
-] satisfies RollupOptions[];
+] satisfies RollupOptions[]

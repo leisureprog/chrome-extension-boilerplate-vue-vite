@@ -1,6 +1,6 @@
 {
   "name": "@extension/vite-config",
-  "version": "0.4.2",
+  "version": "0.4.3",
   "description": "chrome extension - vite base configuration",
   "type": "module",
   "private": true,
@@ -11,7 +11,7 @@
   "scripts": {
     "clean:node_modules": "bunx rimraf node_modules",
     "clean:bundle": "bunx rimraf dist",
-    "clean": "bunm clean:bundle && bunm clean:node_modules",
+    "clean": "bun clean:bundle && bun clean:node_modules",
     "ready": "tsc -b"
   },
   "dependencies": {

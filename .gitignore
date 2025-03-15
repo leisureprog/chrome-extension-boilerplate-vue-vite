@@ -14,6 +14,7 @@ eslint.config.js
 tsconfig.tsbuildinfo
 
 # env
+**/.env.*
 **/.env
 
 # etc
@@ -23,5 +24,3 @@ tsconfig.tsbuildinfo
 
 # compiled
 **/tailwind-output.css
-
-vite.config.mts.timestamp-*

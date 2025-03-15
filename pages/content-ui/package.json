@@ -1,6 +1,6 @@
 {
   "name": "@extension/content-ui",
-  "version": "0.3.3",
+  "version": "0.4.2",
   "description": "chrome extension - content ui",
   "type": "module",
   "private": true,
@@ -13,27 +13,23 @@
     "clean:node_modules": "bunx rimraf node_modules",
     "clean:turbo": "rimraf .turbo",
     "clean": "bun clean:bundle && bun clean:node_modules && bun clean:turbo",
-    "build:tailwindcss": "bun tailwindcss -i ./src/tailwind-input.css -o ./dist/tailwind-output.css -m",
-    "build:vue": "vue-tsc -b && vite build",
-    "build": "bun build:tailwindcss && bun build:vue",
-    "build:watch": "concurrently \"cross-env __DEV__=true vite build --mode development\" \"bun build:tailwindcss -- -w\"",
-    "dev": "bun build:tailwindcss && bun build:watch",
-    "lint": "eslint . --ext .ts,.tsx,.vue",
+    "ready": "bun tailwindcss -i ./src/tailwind-input.css -o ./dist/tailwind-output.css -m",
+    "build": "bun ready && vite build",
+    "dev": "vite build --mode development",
+    "lint": "eslint .",
     "lint:fix": "bun lint --fix",
     "prettier": "prettier . --write --ignore-path ../../.prettierignore",
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
+    "@extension/env": "workspace:*",
     "@extension/storage": "workspace:*",
     "@extension/ui": "workspace:*"
   },
   "devDependencies": {
-    "@extension/env": "workspace:*",
+    "@extension/hmr": "workspace:*",
     "@extension/tailwindcss-config": "workspace:*",
     "@extension/tsconfig": "workspace:*",
-    "@extension/hmr": "workspace:*",
-    "@extension/vite-config": "workspace:*",
-    "concurrently": "^9.0.1",
-    "cross-env": "^7.0.3"
+    "@extension/vite-config": "workspace:*"
   }
 }

@@ -1,19 +1,20 @@
 {
   "name": "@extension/new-tab",
-  "version": "0.3.3",
+  "version": "0.4.2",
   "description": "chrome extension - new tab",
+  "type": "module",
   "private": true,
   "sideEffects": true,
   "files": [
     "dist/**"
   ],
   "scripts": {
-    "clean:node_modules": "bunx rimraf node_modules",
+    "clean:node_modules": "pnpx rimraf node_modules",
     "clean:turbo": "rimraf .turbo",
     "clean": "bun clean:turbo && bun clean:node_modules",
-    "build": "vue-tsc -b && vite build",
-    "dev": "cross-env __DEV__=true vite build --mode development",
-    "lint": "eslint . --ext .ts,.tsx",
+    "build": "vite build",
+    "dev": "vite build --mode development",
+    "lint": "eslint .",
     "lint:fix": "bun lint --fix",
     "prettier": "prettier . --write --ignore-path ../../.prettierignore",
     "type-check": "tsc --noEmit"
@@ -23,12 +24,9 @@
     "@extension/ui": "workspace:*"
   },
   "devDependencies": {
-    "@extension/env": "workspace:*",
     "@extension/tailwindcss-config": "workspace:*",
     "@extension/tsconfig": "workspace:*",
-    "@extension/vite-config": "workspace:*",
-    "postcss-load-config": "^6.0.1",
-    "cross-env": "^7.0.3"
+    "@extension/vite-config": "workspace:*"
   },
   "postcss": {
     "plugins": {

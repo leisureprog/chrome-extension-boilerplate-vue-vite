@@ -1,6 +1,6 @@
 import { createApp } from 'vue'
 import '@src/index.css'
-import '@extension/ui/dist/global.css'
+import '@extension/ui/lib/global.css'
 import Options from '@src/Options.vue'
 
 function init() {
