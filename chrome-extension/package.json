@@ -22,6 +22,7 @@
     "webextension-polyfill": "^0.12.0"
   },
   "devDependencies": {
+    "@extension/env": "workspace:*",
     "@extension/dev-utils": "workspace:*",
     "@extension/hmr": "workspace:*",
     "@extension/tsconfig": "workspace:*",

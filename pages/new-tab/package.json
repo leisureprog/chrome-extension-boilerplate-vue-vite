@@ -23,6 +23,7 @@
     "@extension/ui": "workspace:*"
   },
   "devDependencies": {
+    "@extension/env": "workspace:*",
     "@extension/tailwindcss-config": "workspace:*",
     "@extension/tsconfig": "workspace:*",
     "@extension/vite-config": "workspace:*",

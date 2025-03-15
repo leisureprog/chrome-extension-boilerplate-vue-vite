@@ -31,5 +31,8 @@
     "rollup": "^4.24.0",
     "ts-node": "^10.9.2",
     "ws": "8.18.0"
+  },
+  "dependencies": {
+    "fast-glob": "^3.3.3"
   }
 }
