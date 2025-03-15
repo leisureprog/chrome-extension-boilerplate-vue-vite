@@ -14,7 +14,7 @@
     "clean:turbo": "rimraf .turbo",
     "clean": "bun clean:bundle && bun clean:node_modules && bun clean:turbo",
     "ready": "bun tailwindcss -i ./src/tailwind-input.css -o ./dist/tailwind-output.css -m",
-    "build": "bun ready && vite build",
+    "build": "bun ready && vue-tsc -b && vite build",
     "dev": "vite build --mode development",
     "lint": "eslint .",
     "lint:fix": "bun lint --fix",

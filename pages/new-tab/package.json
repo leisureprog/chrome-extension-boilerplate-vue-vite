@@ -12,7 +12,7 @@
     "clean:node_modules": "pnpx rimraf node_modules",
     "clean:turbo": "rimraf .turbo",
     "clean": "bun clean:turbo && bun clean:node_modules",
-    "build": "vite build",
+    "build": "vue-tsc -b && vite build",
     "dev": "vite build --mode development",
     "lint": "eslint .",
     "lint:fix": "bun lint --fix",
