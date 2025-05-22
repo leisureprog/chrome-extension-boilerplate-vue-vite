@@ -2,7 +2,7 @@
   "lockfileVersion": 1,
   "workspaces": {
     "": {
-      "name": "@maga/chrome-extension-boilerplate-vue-vite",
+      "name": "@leisire/chrome-extension-boilerplate-vue-vite",
       "dependencies": {
         "@vueuse/core": "^11.1.0",
         "archiver": "^7.0.1",

@@ -71,7 +71,7 @@ This boilerplate is made for creating chrome extensions using React and Typescri
 ### For Chrome: <a name="getting-started-chrome"></a>
 
 1. Run:
-    - Dev: `bun dev` (On windows, you should run as administrator. [(Issue#456)](https://github.com/0xMaga/chrome-extension-boilerplate-vue-vite/issues/456)
+    - Dev: `bun dev` (On windows, you should run as administrator. [(Issue#456)](https://github.com/leisureprog/chrome-extension-boilerplate-vue-vite/issues/456)
     - Prod: `bun build`
 2. Open in browser - `chrome://extensions`
 3. Check - `Developer mode`

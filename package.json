@@ -1,5 +1,5 @@
 {
-  "name": "@maga/chrome-extension-boilerplate-vue-vite",
+  "name": "@leisure/chrome-extension-boilerplate-vue-vite",
   "version": "0.0.1",
   "description": "chrome extension boilerplate",
   "engines": {
