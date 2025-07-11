@@ -9,7 +9,7 @@
     "dist/**"
   ],
   "scripts": {
-    "clean:node_modules": "pnpx rimraf node_modules",
+    "clean:node_modules": "bunx rimraf node_modules",
     "clean:turbo": "rimraf .turbo",
     "clean": "bun clean:turbo && bun clean:node_modules",
     "build": "vue-tsc -b && vite build",

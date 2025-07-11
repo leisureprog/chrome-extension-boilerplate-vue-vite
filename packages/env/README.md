@@ -6,7 +6,7 @@ To use the code in the package, you need to follow those steps:
 1. Add a new record to `.env` (NEED TO CONTAIN `CEB_` PREFIX),
 
     - If you want via cli:
-    - Add it as argument like: `pnpm set-global-env CLI_CEB_NEXT_VALUE=new_data ...` (NEED TO CONTAIN `CLI_CEB_` PREFIX)
+    - Add it as argument like: `bun set-global-env CLI_CEB_NEXT_VALUE=new_data ...` (NEED TO CONTAIN `CLI_CEB_` PREFIX)
 
    > [!IMPORTANT]
    > `CLI_CEB_DEV` and `CLI_CEB_FIREFOX` are `false` by default \
