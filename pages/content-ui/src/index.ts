@@ -1,6 +1,5 @@
 import { createApp, defineComponent, h } from 'vue'
 import App from '@src/App.vue'
-// @ts-expect-error Because file doesn't exist before build
 import tailwindcssOutput from '../dist/tailwind-output.css?inline'
 
 const root = document.createElement('div')
